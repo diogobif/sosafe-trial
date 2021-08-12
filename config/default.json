@@ -1,0 +1,14 @@
+{
+  "port": 3000,
+  "host": "localhost",
+  "api": {
+    "key": "KYL5KOd9EN0Hl3sQKd4oIs7OfkB6qnNz",
+    "url": "https://api.scamadviser.cloud/v2/trust/"
+  },
+  "db": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": "sosafe"
+  }
+}
