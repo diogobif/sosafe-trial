@@ -6,7 +6,7 @@ const validateBody = (req, res, next) => {
     res.sendStatus(400);
   }
 
-  return next;
+  return next();
 }
 
 export default validateBody;
