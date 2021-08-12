@@ -1,0 +1,23 @@
+{
+  "name": "sosafe-trial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogobif/sosafe-trial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogobif/sosafe-trial/issues"
+  },
+  "homepage": "https://github.com/diogobif/sosafe-trial#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
