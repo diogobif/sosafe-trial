@@ -21,19 +21,11 @@ function clearFilter(filter) {
 export async function searchData(queryString) {
   try {
     const { date } = queryString;
-    let queryResult = [];
-    if (date) {
-      queryResult = await Url.findAll({
-        attributes: ['domain', 'score', 'attributes', 'createdAt'],
-        where: Sequelize.where(Sequelize.fn('date', Sequelize.col('createdAt')), '=', date),
-        order: [['createdAt', 'ASC']]
-      });
-    } else {
-      queryResult = await Url.findAll({
-        attributes: ['domain', 'score', 'attributes', 'createdAt'],
-        order: [['createdAt', 'ASC']]
-      });
-    }
+    const queryResult = await Url.findAll({
+      attributes: ['domain', 'score', 'attributes', 'createdAt'],
+      where: date ? Sequelize.where(Sequelize.fn('date', Sequelize.col('createdAt')), '=', date) : {},
+      order: [['createdAt', 'ASC']]
+    });
     
     return JSON.stringify(queryResult);
   } catch (error) {

@@ -1,5 +1,3 @@
-import { Sequelize } from "sequelize";
-import config from 'config';
 import logger from '../logger';
 import createSequelizeConnection from './sequelizeConnection';
 
