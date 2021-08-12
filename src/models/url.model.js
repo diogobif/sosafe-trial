@@ -17,11 +17,15 @@ const Url = sequelizeConnection.define('Url', {
   }
 }, {
   timestamps: true,
-  updatedAt: false
+  updatedAt: false,
+  indexes: [{
+    unique: false,
+    fields: ['domain', 'score']
+  }]
 });
 
 // (async () => {
-//   await sequelizeConnection.sync({ force: true });
+//   await sequelizeConnection.sync({ alter: true });
 // })();
 
 export default Url;
