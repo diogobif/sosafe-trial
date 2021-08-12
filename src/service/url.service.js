@@ -15,10 +15,10 @@ export async function createUrl(urlData) {
 
 export async function searchData(queryString) {
   try {
-    const { date } = queryString;
+    const { startDate, endDate } = queryString;
     const queryResult = await Url.findAll({
       attributes: ['domain', 'score', 'attributes', 'createdAt'],
-      where: date ? Sequelize.where(Sequelize.fn('date', Sequelize.col('createdAt')), '=', date) : {},
+      where: startDate && endDate ? Sequelize.where(Sequelize.fn('date', Sequelize.col('createdAt')), 'BETWEEN', [startDate, endDate]) : {},
       order: [['createdAt', 'ASC']]
     });
     

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 import createSequelizeConnection from '../db/sequelizeConnection';
-const sequelizeConnection = createSequelizeConnection();
 
+const sequelizeConnection = createSequelizeConnection();
 const Url = sequelizeConnection.define('Url', {
   domain: {
     type: DataTypes.STRING,
