@@ -9,13 +9,8 @@ export async function createUrl(urlData) {
     return result.toJSON();
   } catch (error) {
     logger.error(error);
+    return false;
   }
-}
-
-function clearFilter(filter) {
-  const entries = Object.entries(filter);
-  let filteredEntries = entries.filter(([key,val]) => val);
-  return Object.fromEntries(filteredEntries);
 }
 
 export async function searchData(queryString) {
